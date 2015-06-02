@@ -20,7 +20,7 @@ Overarching Topics
 Overview
 --------
 
-As already mention earlier Project Platypus consists of four very different phases. Each of which is comprised of its own unique challenges for Team Greendale and our great colleges form i:IT. 
+As already mention earlier Project Platypus consists of four very different phases. Each of which is comprised of its own unique challenges for Team Greendale and our great colleagues from i:IT. 
 This article provides a general overview on the individual phases set forth in one of our planning workshops.
 
 Why Platypus?
