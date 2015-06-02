@@ -1,3 +1,3 @@
-# greendale-documentation
+# Greendale Public Docs
 
-just update to apply changes to greendale.readthedocs.org.
+Available at https://docs.greendale.zalan.do

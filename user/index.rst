@@ -48,7 +48,7 @@ This looks very ugly and not so astetically pleasing::
 
 But using jq you get a much cleaner output::
 
-       curl --request GET https://auth.zalando.com/am/oauth2/tokeninfo?access_token=$token | jq .
+       curl --request GET https://auth.zalando.com/oauth2/tokeninfo?access_token=$token | jq .
         {
           "access_token": "d1f2bf18-16f9-4da5-8b0b-75d1a702122d",
           "uid": "ckunert",
