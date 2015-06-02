@@ -14,5 +14,4 @@ or across system and enterprise boundaries.
     platypus/index
     apps/index
     user/index
-    change/index
     tips/index
