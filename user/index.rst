@@ -1,6 +1,34 @@
 User Guide
 ==========
 
+On Tokens
+---------
+
+Access Tokens
+^^^^^^^^^^^^^
+
+According to the RFC of OAuth - Access tokens are credentials used to access protected resources - meaning they are to be treated like you would treat your passwords.
+
+An access token is a string representing an authorization issued to the client, you can think of it like cash. They represent specific scopes and duration of access, granted by the resource owner, and enforced by the resource server and authorization server.
+
+It is absolutely essential not to paste your access token into any form of electronic communication (Skype, E-mail, etc.) because anybody - and I really mean anybody - could pickup your access token and request access to a protected resource.
+
+Refresh Tokens
+^^^^^^^^^^^^^^
+
+Refresh tokens are credentials used to obtain access tokens.  Refresh tokens are issued to the client by the authorization server and are used to obtain a new access token when the current access token becomes invalid or expires, or to obtain additional access tokens with identical or narrower scope 
+(access tokens may have a shorter lifetime and fewer permissions than authorized by the resource owner).
+
+The Grant-Types or Flows - Authorization and Client-Credentials - issue refresh tokens. However the Implicit Flow does not have a refresh token due to security concerns.
+
+Because of this tokens nature they usually have a much larger validity period and therefore a much higher requirement on their confidentiality. You can think of them as your credit card, they can get you new money pretty much anywhere.
+
+Let me quote Henning here:
+
+    NEVER, NEVER publish any credentials (user/password or OAuth2 tokens)!
+
+    Especially do not copy&paste "curl" command lines with Authorization header anywhere (no HipChat, no mail, no GitHub issues, etc)!
+
 Getting an Access Token
 -----------------------
 
@@ -10,7 +38,7 @@ So for the brave or the interested please feel free to check it out. It requires
 Create Authorization Header
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Because you need to provide your credentials somehow, we use currenlty basic auth to do so. Basic auth uses a base64 representation of you credentials::
+Because you need to provide your credentials somehow, we use currently basic Auth to do so. Basic Auth uses a base64 representation of you credentials::
 
                 #Store your credentials in var for ease of use
                 auth=$(echo -n <username>:<password> | base64)
@@ -42,7 +70,7 @@ So great you have a token now but what can you actually do with it. Visit the to
 
         token=$(curl -XGET --header "Authorization: Basic $auth" "https://token.auth.zalando.com/access_token")
 
-This looks very ugly and not so astetically pleasing::
+This looks very ugly and not so ascetically pleasing::
 
         access_token":"d1f2bf18-16f9-4da5-8b0b-75d1a702122d","uid":"ckunert","grant_type":"password","scope":["uid","cn"],"realm":"employees","cn":"","token_type":"Bearer","expires_in":3467}
 
